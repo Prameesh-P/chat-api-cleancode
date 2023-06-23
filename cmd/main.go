@@ -1,9 +1,27 @@
 package main
 
 import (
-	cfg "github.com/Prameesh-P/chat-api-cleancode"
+	."log"
+
+	cfg "github.com/Prameesh-P/chat-api-cleancode/pkg/config"
+	"github.com/Prameesh-P/chat-api-cleancode/pkg/database"
 )
+
+var (
+	lf=Fatalf
+)
+
+func Init(){
+
+	
+
+}
+
 func main(){
 
-	config,err:=cfg.LoadConfig()
+
+	cfg.LoadConfig()
+	database.ConnectDatabase()
+	database.SyncDatabase()
+
 }
